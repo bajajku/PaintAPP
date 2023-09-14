@@ -15,7 +15,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import sheridan.bajajku.paintapp.PaintView.Companion.colorList
 import sheridan.bajajku.paintapp.PaintView.Companion.currentBrush
+import sheridan.bajajku.paintapp.PaintView.Companion.pathList
 import sheridan.bajajku.paintapp.ui.theme.PaintAPPTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,6 +34,7 @@ class MainActivity : ComponentActivity() {
         val blueBtn = findViewById<ImageButton>(R.id.blueColor)
         val blackBtn = findViewById<ImageButton>(R.id.blackColor)
         val greenBtn = findViewById<ImageButton>(R.id.greenColor)
+        val eraserBtn = findViewById<ImageButton>(R.id.eraser)
 
         redBtn.setOnClickListener {
             paintBrush.setColor(Color.RED)
@@ -49,6 +52,12 @@ class MainActivity : ComponentActivity() {
             paintBrush.setColor(Color.GREEN)
             currentColor(paintBrush.color)
         }
+        eraserBtn.setOnClickListener {
+            pathList.clear()
+            colorList.clear()
+            path.reset()
+        }
+
 
     }
     private fun currentColor(color: Int){
