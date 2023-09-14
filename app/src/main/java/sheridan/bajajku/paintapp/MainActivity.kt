@@ -4,6 +4,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
         val greenBtn = findViewById<ImageButton>(R.id.greenColor)
 
         redBtn.setOnClickListener {
-
+            Toast.makeText(this, "Sas", Toast.LENGTH_SHORT).show()
         }
         blueBtn.setOnClickListener {
 
